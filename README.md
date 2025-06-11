@@ -10,8 +10,9 @@ The interface has three tabs for organising tasks:
 * **Diarias**
 * **Recurrentes**
 
-Each task lets you set a start and end date and an optional attachment. In the
-"Recurrentes" tab you can also specify a frequency such as mensual or semanal.
+Each task lets you set a start and end date (optional for "Diarias" and "Recurrentes") and attach a file if needed.
+In the "Diarias" tab you may use a time counter instead of dates to specify how long the task lasts.
+The "Recurrentes" tab also lets you choose how often the task repeats, for example mensual o semanal.
 Use the tabs to switch between categories and view only the tasks for that
 section. Tasks can be marcadas como completadas mediante una casilla de
 verificación y se muestran en verde cuando están listas. Un botón permite

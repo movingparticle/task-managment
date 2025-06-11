@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Descripción:</label>
-                <textarea id="description" required></textarea>
+                <textarea id="description"></textarea>
             </div>
             <div class="form-group">
                 <label for="startDate">Desde:</label>
@@ -34,6 +34,10 @@
             <div class="form-group">
                 <label for="endDate">Hasta:</label>
                 <input type="date" id="endDate" required>
+            </div>
+            <div class="form-group" id="timerGroup" style="display:none;">
+                <label for="duration">Tiempo (minutos):</label>
+                <input type="number" id="duration" min="1">
             </div>
             <div class="form-group" id="freqGroup" style="display:none;">
                 <label for="frequency">Frecuencia:</label>
