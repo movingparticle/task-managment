@@ -9,6 +9,11 @@
 <body>
     <div class="container">
         <h1>Administrador de Tareas</h1>
+        <div class="tabs">
+            <button data-category="importante" class="tab active">Importantes</button>
+            <button data-category="diaria" class="tab">Diarias</button>
+            <button data-category="anual" class="tab">Anuales</button>
+        </div>
         <form id="taskForm">
             <div class="form-group">
                 <label for="title">Título:</label>
@@ -17,6 +22,14 @@
             <div class="form-group">
                 <label for="description">Descripción:</label>
                 <textarea id="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="startDate">Desde:</label>
+                <input type="date" id="startDate" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate">Hasta:</label>
+                <input type="date" id="endDate" required>
             </div>
             <div class="form-group">
                 <label for="attachment">Adjunto (opcional):</label>
