@@ -43,7 +43,12 @@ function renderTasks() {
         if (t.startDate || t.endDate) {
             text += ` (${t.startDate || ''} - ${t.endDate || ''})`;
         }
-        text += ` - ${t.description}`;
+        if (t.description) {
+            text += ` - ${t.description}`;
+        }
+        if (t.duration) {
+            text += ` [${t.duration} min]`;
+        }
         if (t.frequency) {
             text += ` [${t.frequency}]`;
         }
@@ -66,6 +71,8 @@ async function handleAdd(e) {
     const description = document.getElementById('description').value.trim();
     const startDate = document.getElementById('startDate').value;
     const endDate = document.getElementById('endDate').value;
+    const durationValue = document.getElementById('duration').value;
+    const duration = durationValue ? parseInt(durationValue, 10) : null;
     const frequency = document.getElementById('frequency').value;
     const fileInput = document.getElementById('attachment');
     let attachment = null;
@@ -77,7 +84,17 @@ async function handleAdd(e) {
     }
 
     const tasks = loadTasks();
-    tasks.push({ title, description, startDate, endDate, category: currentCategory, attachment, frequency: currentCategory === 'recurrente' ? frequency : undefined, done: false });
+    tasks.push({
+        title,
+        description,
+        startDate,
+        endDate,
+        category: currentCategory,
+        attachment,
+        frequency: currentCategory === 'recurrente' ? frequency : undefined,
+        duration: currentCategory === 'diaria' ? duration : undefined,
+        done: false
+    });
     saveTasks(tasks);
     e.target.reset();
     renderTasks();
@@ -99,14 +116,22 @@ function switchCategory(cat) {
     const form = document.getElementById('taskForm');
     form.style.display = 'none';
     const freqGroup = document.getElementById('freqGroup');
+    const timerGroup = document.getElementById('timerGroup');
     const start = document.getElementById('startDate');
     const end = document.getElementById('endDate');
     if (cat === 'recurrente') {
         freqGroup.style.display = 'block';
+        timerGroup.style.display = 'none';
+        start.required = false;
+        end.required = false;
+    } else if (cat === 'diaria') {
+        freqGroup.style.display = 'none';
+        timerGroup.style.display = 'block';
         start.required = false;
         end.required = false;
     } else {
         freqGroup.style.display = 'none';
+        timerGroup.style.display = 'none';
         start.required = true;
         end.required = true;
     }
