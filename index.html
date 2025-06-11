@@ -12,9 +12,13 @@
         <div class="tabs">
             <button data-category="importante" class="tab active">Importantes</button>
             <button data-category="diaria" class="tab">Diarias</button>
-            <button data-category="anual" class="tab">Anuales</button>
+            <button data-category="recurrente" class="tab">Recurrentes</button>
         </div>
-        <form id="taskForm">
+        <div class="actions">
+            <button id="showFormBtn" class="add-btn">Agregar tarea +</button>
+            <button id="deleteDoneBtn" class="delete-btn">Eliminar tareas hechas</button>
+        </div>
+        <form id="taskForm" style="display:none;">
             <div class="form-group">
                 <label for="title">Título:</label>
                 <input type="text" id="title" required>
@@ -30,6 +34,15 @@
             <div class="form-group">
                 <label for="endDate">Hasta:</label>
                 <input type="date" id="endDate" required>
+            </div>
+            <div class="form-group" id="freqGroup" style="display:none;">
+                <label for="frequency">Frecuencia:</label>
+                <select id="frequency">
+                    <option value="diaria">Diaria</option>
+                    <option value="semanal">Semanal</option>
+                    <option value="mensual">Mensual</option>
+                    <option value="anual">Anual</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="attachment">Adjunto (opcional):</label>

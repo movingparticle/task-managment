@@ -31,6 +31,14 @@ button {
     padding: 8px 12px;
 }
 
+.actions {
+    margin-bottom: 15px;
+}
+
+.add-btn {
+    margin-right: 10px;
+}
+
 .tabs {
     display: flex;
     margin-bottom: 15px;
@@ -57,9 +65,16 @@ ul {
     list-style: none;
     padding: 0;
 }
-li {
+li.task {
+    display: flex;
+    align-items: center;
     padding: 8px;
     border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+.task.done {
+    background: #d1f0d1;
 }
 .attachment {
     color: green;
