@@ -8,7 +8,11 @@ The interface has three tabs for organising tasks:
 
 * **Importantes**
 * **Diarias**
-* **Anuales**
+* **Recurrentes**
 
-Each task lets you set a start and end date and an optional attachment. Use the
-tabs to switch between categories and view only the tasks for that section.
+Each task lets you set a start and end date and an optional attachment. In the
+"Recurrentes" tab you can also specify a frequency such as mensual or semanal.
+Use the tabs to switch between categories and view only the tasks for that
+section. Tasks can be marcadas como completadas mediante una casilla de
+verificación y se muestran en verde cuando están listas. Un botón permite
+eliminar todas las tareas completadas.
