@@ -1,7 +1,14 @@
 # Task Manager App
 
-This simple command-line app now supports binary attachments for tasks.
+This project is a simple task manager built only with HTML, CSS and JavaScript.
+Tasks are stored locally in the browser using `localStorage` so you can copy the
+files to any static host or even CodePen and manage your tasks without a server.
 
-A lightweight HTML interface has been added (see `index.html`, `style.css` and `script.js`).
-It stores tasks in the browser using `localStorage`, so you can copy the files into
-CodePen or any static host and manage tasks in the browser.
+The interface has three tabs for organising tasks:
+
+* **Importantes**
+* **Diarias**
+* **Anuales**
+
+Each task lets you set a start and end date and an optional attachment. Use the
+tabs to switch between categories and view only the tasks for that section.
